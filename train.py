@@ -219,11 +219,9 @@ def train():
     )
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
 
-    logging.debug(
-        f"model_args: {model_args}\n",
-        f"data_args: {data_args}\n",
-        f"training_args: {training_args}\n",
-    )
+    logging.debug(f"model_args: {model_args}")
+    logging.debug(f"data_args: {data_args}")
+    logging.debug(f"training_args: {training_args}")
 
     model = transformers.AutoModelForCausalLM.from_pretrained(
         model_args.model_name_or_path,
